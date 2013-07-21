@@ -13,10 +13,7 @@ Dir["./models/*.rb"].each {|file| require file }
 # Database
 DataMapper.setup(:default, 'mysql://root@localhost/beermap_development')
 DataMapper.finalize
-DataMapper.auto_migrate!
-
-Bar.create(name: 'toto')
-Beer.create(price: 12.0, bar_id: Bar.first.id)
+DataMapper.auto_upgrade!
 
 # Rendering
 require "cuba/render"

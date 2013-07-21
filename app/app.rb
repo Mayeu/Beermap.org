@@ -3,6 +3,11 @@ Cuba.define do
     on root do
       res.write render("views/index.slim", best_beer: Beer.cheaper)
     end
+
+    on "bars" do |params|
+      bars = Bar.closer(43.2934, 5.39583)
+      res.write bars.to_json
+    end
   end
 
   on post do

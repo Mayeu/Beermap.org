@@ -1,32 +1,30 @@
 doctype 5
-html lang="en" ng-app=""
+html lang="en" ng-app="beermap"
   head
-    javascript:
-      this.BeerForm = function($scope, $http) {
-        $scope.init = function(){
-          navigator.geolocation.getCurrentPosition(get_location);
-        };
+    link rel="stylesheet" href="/css/open_layer_theme.css"
+    link rel="stylesheet" href="/css/open_layer_style.css"
+    script src="/js/angular.min.js"
+    script src="/js/OpenLayers.js"
+    script src="http://leafletjs.com/dist/leaflet.js"
+    script src="http://open.mapquestapi.com/sdk/js/v7.0.s/mqa.toolkit.js?key=Fmjtd%7Cluub2002nd%2C2n%3Do5-9urx54"
 
-        get_location = function(position){
-          $scope.lat  = position.coords.latitude;
-          $scope.long = position.coords.longitude;
-          $scope.$apply(); // wtf ?
-        };
-      };
-
-      BeerForm.$inject = ['$scope', '$http'];
-
-    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
   body
 
-    h1 coucou tu veux voir mon prix ?
-    p= best_beer.price
+    div ng-controller="BeerFormCtrl" ng-init="init()"
+      #map.smallmap
 
-    form action="beers" method="post" ng-controller="BeerForm" ng-init="init()"
-      input type="hidden" name="bar[lat]" value="{{lat}}"
-      input type="hidden" name="bar[long]" value="{{long}}"
-      label bar
-      input type="text" name="bar[name]"
-      label price
-      input type="text" name="beer[price]"
-      input type="submit" value="GNOLE !"
+      h1 coucou tu veux voir mon prix ?
+      p= best_beer.price
+
+      form action="beers" method="post" 
+        input type="hidden" name="bar[lat]" value="{{lat}}"
+        input type="hidden" name="bar[long]" value="{{long}}"
+        label bar
+        input type="text" name="bar[name]"
+        label price
+        input type="text" name="beer[price]"
+        input type="submit" value="GNOLE !" 
+
+    script src="/js/app/app.js"
+    script src="/js/app/controllers.js"
+    script src="/js/app/directives.js"
