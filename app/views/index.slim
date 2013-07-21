@@ -1,9 +1,32 @@
-h1 coucou tu veux voir mon prix ?
-p= best_beer.price
+doctype 5
+html lang="en" ng-app=""
+  head
+    javascript:
+      this.BeerForm = function($scope, $http) {
+        $scope.init = function(){
+          navigator.geolocation.getCurrentPosition(get_location);
+        };
 
-form action="beers" method="post"
-  label bar
-  input type="text" name="bar[name]"
-  label price
-  input type="text" name="beer[price]"
-  input type="submit" value="GNOLE !"
+        get_location = function(position){
+          $scope.lat  = position.coords.latitude;
+          $scope.long = position.coords.longitude;
+          $scope.$apply(); // wtf ?
+        };
+      };
+
+      BeerForm.$inject = ['$scope', '$http'];
+
+    script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
+  body
+
+    h1 coucou tu veux voir mon prix ?
+    p= best_beer.price
+
+    form action="beers" method="post" ng-controller="BeerForm" ng-init="init()"
+      input type="hidden" name="bar[lat]" value="{{lat}}"
+      input type="hidden" name="bar[long]" value="{{long}}"
+      label bar
+      input type="text" name="bar[name]"
+      label price
+      input type="text" name="beer[price]"
+      input type="submit" value="GNOLE !"
