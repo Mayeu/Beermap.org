@@ -1,5 +1,6 @@
 *.gem
 *.rbc
+.rvmrc
 .bundle
 .config
 coverage
@@ -19,3 +20,7 @@ doc/
 
 # VIM artifacts
 *.sw*
+
+# Mac OSX
+.DS_Store
+._*
