@@ -2,6 +2,10 @@
 
 Beermap.org help you find the chepeast beer around you
 
+## WARNING
+
+This is a work in progress ! Do no use it (weird shit is weird)
+
 ##License
 
 Obviously the Beermap source code is available under the Beerware license. But
