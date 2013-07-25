@@ -2,7 +2,10 @@ html, body, .container, .container.row{
   height: 100%;
 }
 
+#map img, .google-maps img {
+  max-width: none;
+}
+
 #map {
   height: 500px;
-  width: 500px;
 }
