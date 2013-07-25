@@ -12,7 +12,7 @@ DataMapper.setup(:default, Settings::SQL_URI)
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-
+# Routes
 Cuba.define do
   on get do
     on root do
@@ -20,7 +20,7 @@ Cuba.define do
     end
 
     on "bars" do |params|
-      bars = Bar.closer(43.2934, 5.39583)
+      bars = Bar.closer(params['lat'], params['long'])
       res.write bars.to_json
     end
   end
