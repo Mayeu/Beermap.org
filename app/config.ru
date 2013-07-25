@@ -15,6 +15,9 @@ DataMapper.setup(:default, 'mysql://root@localhost/beermap_development')
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
+Bar.create name: "MonBar"
+Beer.create price: 3, bar_id: Bar.first.id
+
 # Rendering
 require "cuba/render"
 Cuba.plugin Cuba::Render
