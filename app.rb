@@ -1,3 +1,18 @@
+# Require the settings
+require_relative './settings.rb'
+
+# Cuba plugins
+Cuba.plugin Cuba::Render
+
+# Require all models
+Dir["./models/*.rb"].each {|file| require file }
+
+# Database initialization
+DataMapper.setup(:default, Settings::SQL_URI)
+DataMapper.finalize
+DataMapper.auto_upgrade!
+
+
 Cuba.define do
   on get do
     on root do
