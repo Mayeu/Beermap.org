@@ -42,7 +42,7 @@ function BeerFormCtrl($scope, $http) {
 
   get_bars = function(lat, long){
     $http({
-      method: "GET",
+      method: "POST",
       url: "/bars",
       data: {
         lat: lat,
