@@ -1,6 +1,7 @@
 ### Roadmap
 
 * <del>pré design</del>
+* <del>code cleaning</del>
 * tests
   * js 
   * ruby
