@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 .rvmrc
+.ruby-version
 .bundle
 .config
 coverage
