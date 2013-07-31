@@ -10,6 +10,9 @@ class Bar
   has n, :beers
 
   def self.closer(lat, long)
+    lat  = lat.to_f
+    long = long.to_f
+
     lon1 = long - DISTANCE / (Math::cos(lat * Math::PI / 180) * 69) 
     lon2 = long + DISTANCE / (Math::cos(lat * Math::PI / 180) * 69) 
     lat1 = lat  - DISTANCE / 69

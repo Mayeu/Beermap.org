@@ -1,4 +1,4 @@
-class Settings < Cuba
+class Settings
   def initialize
     # Get the yaml env file
     yaml = YAML.load( File.open(File.expand_path("env.yml", File.dirname(__FILE__))))

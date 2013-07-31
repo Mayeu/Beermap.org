@@ -8,4 +8,7 @@ gem 'slim'
 
 group :dev do 
   gem 'shotgun'
+  gem 'capybara'
+  gem 'rack-test'
+  gem 'cutest'
 end
