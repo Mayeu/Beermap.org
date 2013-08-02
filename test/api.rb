@@ -16,7 +16,7 @@ scope do
 
   test "return the cheapest beer" do
     Beer.create(price: 1.0, bar: @bar)
-    
-    assert_equal 1.0, Beer.cheaper.price
+
+    assert_equal 1.0, Beer.cheapest.price
   end
 end
