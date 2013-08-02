@@ -13,4 +13,10 @@ scope do
 
     assert_equal "[{\"id\":1,\"name\":\"foo\",\"lat\":43.2936,\"long\":5.39583}]", last_response.body
   end
+
+  test "return the cheapest beer" do
+    Beer.create(price: 1.0, bar: @bar)
+    
+    assert_equal 1.0, Beer.cheaper.price
+  end
 end
