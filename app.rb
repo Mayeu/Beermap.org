@@ -17,7 +17,7 @@ DataMapper.auto_upgrade!
 Cuba.define do
   on get do
     on root do
-      res.write render("views/index.slim", best_beer: Beer.cheaper)
+      res.write render("views/index.slim", best_beer: Beer.cheapest)
     end
   end
 

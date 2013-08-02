@@ -6,7 +6,7 @@ class Beer
 
   belongs_to :bar
 
-  def self.cheaper
+  def self.cheapest
     all(order: [:price.asc]).first
   end
 end
