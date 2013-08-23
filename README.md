@@ -1,6 +1,6 @@
 #Beermap.org
 
-Beermap.org help you find the chepeast beer around you
+Beermap.org help you find a beer around you.
 
 ## WARNING
 
